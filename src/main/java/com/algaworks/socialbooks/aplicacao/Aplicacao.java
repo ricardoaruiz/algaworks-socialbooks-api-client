@@ -1,27 +1,34 @@
 package com.algaworks.socialbooks.aplicacao;
 
-import java.net.URI;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
+import com.algaworks.socialbooks.client.LivrosClient;
+import com.algaworks.socialbooks.client.domain.Livro;
 
 public class Aplicacao {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
-		RestTemplate restTemplate = new RestTemplate();
+		LivrosClient cliente = new LivrosClient();
 		
-		RequestEntity<Void> request = RequestEntity
-			.get(URI.create("http://localhost:8080/livros"))
-			.header("Authorization", "Basic YWxnYXdvcmtzOnMzbmg0").build();
+		Livro livro = new Livro();
+		livro.setNome("Git passo-a-passo");
+		livro.setEditora("AlgaWorks");
+		livro.setPublicacao(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/2016"));
+		livro.setResumo("Este livro aborda o Git");
 		
-		ResponseEntity<Livro[]> response = restTemplate.exchange(request, Livro[].class);
+		String localizacao = cliente.salvar(livro);
 		
-		for(Livro livro : response.getBody()){
-			System.out.println("Livro: " + livro.getNome());
+		System.out.println("URI do livro salvo: " + localizacao);
+		
+		List<Livro> listaLivros = cliente.listar();
+		
+		for(Livro livro1 : listaLivros){
+			System.out.println("Livro: " + livro1.getNome());
 		}
-		
+				
 	}
 	
 }

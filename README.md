@@ -14,3 +14,7 @@ Treinamento Web Services RESTful e Spring
       <artifactId>jackson-databind</artifactId>
       <version>2.7.2</version>
     </dependency>
+
+<b>Aula 4.3</b> - Evoluindo nosso cliente Java
+
+- Criamos a classe "LivrosClient" com os métodos "listar" e "salvar" chamando a API utilizando RestTemplate.

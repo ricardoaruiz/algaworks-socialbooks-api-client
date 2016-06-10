@@ -1,4 +1,4 @@
-package com.algaworks.socialbooks.aplicacao;
+package com.algaworks.socialbooks.client.domain;
 
 public class ResourceDetailError {
 

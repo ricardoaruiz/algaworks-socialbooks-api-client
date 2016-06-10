@@ -1,4 +1,4 @@
-package com.algaworks.socialbooks.aplicacao;
+package com.algaworks.socialbooks.client.domain;
 
 import java.util.Date;
 import java.util.List;

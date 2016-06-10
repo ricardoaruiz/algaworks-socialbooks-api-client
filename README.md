@@ -18,3 +18,7 @@ Treinamento Web Services RESTful e Spring
 <b>Aula 4.3</b> - Evoluindo nosso cliente Java
 
 - Criamos a classe "LivrosClient" com os métodos "listar" e "salvar" chamando a API utilizando RestTemplate.
+
+<b>Aula 4.4</b> - Finalizando nosso cliente Java
+
+- Alteramos a classe "LivrosClient" passando em seu construtor a URL, usuário e senha para consumir a API

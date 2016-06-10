@@ -11,10 +11,10 @@ public class Aplicacao {
 
 	public static void main(String[] args) throws ParseException {
 		
-		LivrosClient cliente = new LivrosClient();
+		LivrosClient cliente = new LivrosClient("http://localhost:8080", "algaworks", "s3nh4");
 		
 		Livro livro = new Livro();
-		livro.setNome("Git passo-a-passo");
+		livro.setNome("Rest aplicado");
 		livro.setEditora("AlgaWorks");
 		livro.setPublicacao(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/2016"));
 		livro.setResumo("Este livro aborda o Git");
@@ -28,6 +28,10 @@ public class Aplicacao {
 		for(Livro livro1 : listaLivros){
 			System.out.println("Livro: " + livro1.getNome());
 		}
+		
+		Livro livroEncontrado = cliente.buscar(localizacao);
+		
+		System.out.println("Livro encontrado: " + livroEncontrado.getNome());
 				
 	}
 	

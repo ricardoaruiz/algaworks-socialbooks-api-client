@@ -22,3 +22,7 @@ Treinamento Web Services RESTful e Spring
 <b>Aula 4.4</b> - Finalizando nosso cliente Java
 
 - Alteramos a classe "LivrosClient" passando em seu construtor a URL, usuário e senha para consumir a API
+
+<b>Aula 4.5</b> Cliente JavaScript
+
+- Criamos uma página index.html que tem uma tabela de livros que deve ser preenchida com o resultado do consumo da API.
